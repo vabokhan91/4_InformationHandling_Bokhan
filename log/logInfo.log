@@ -1,0 +1,37 @@
+2017-06-30 21:46:43.157 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file java.io.BufferedInputStream@46ee7fe8 
+2017-06-30 21:59:08.894 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file data\data.txt 
+2017-06-30 22:01:12.654 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file data\data.txt 
+2017-06-30 22:04:29.404 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file data\data.txt 
+2017-06-30 22:08:20.117 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file \src\main\resources\data\data.txt 
+2017-06-30 22:12:35.355 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file data\data.txt 
+2017-06-30 22:13:09.506 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file null 
+2017-06-30 22:13:40.100 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file null 
+2017-06-30 22:14:22.767 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file java.nio.file.NoSuchFileException: \data\data.txt 
+2017-06-30 22:15:05.582 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file java.nio.file.NoSuchFileException: \data\data.txt 
+2017-07-01 00:54:22.393 [main] ERROR com.vbokhan.informationhandling.reader.TextReader - Error with file java.nio.file.NoSuchFileException: aaa.txt 
+2017-07-06 13:24:38.270 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value 13+(i@)
+2017-07-06 13:24:49.815 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value 13+(i@)
+2017-07-06 13:26:35.961 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value 13+(i@)
+2017-07-06 13:26:43.034 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value 13+(i@)
+2017-07-06 13:36:49.759 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value 13+(i@)
+2017-07-06 13:40:09.639 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value 13+(i@)
+2017-07-06 13:40:30.502 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value (
+2017-07-06 13:40:30.518 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value )
+2017-07-06 13:40:30.520 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 13:48:17.751 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value (
+2017-07-06 13:48:20.718 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value )
+2017-07-06 13:48:22.542 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 13:50:02.292 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value (
+2017-07-06 13:50:02.295 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value )
+2017-07-06 13:50:02.295 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 14:04:02.640 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value (
+2017-07-06 14:04:02.646 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value )
+2017-07-06 14:04:02.646 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 14:04:08.594 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value )
+2017-07-06 14:04:08.599 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 14:04:52.980 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value )
+2017-07-06 14:04:52.983 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 14:05:36.853 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value )
+2017-07-06 14:05:36.857 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 14:06:29.174 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
+2017-07-06 14:08:10.132 [main] ERROR com.vbokhan.informationhandling.interpreter.Client - Wrong value  
