@@ -2,9 +2,7 @@ package com.vbokhan.informationhandling.entity;
 
 import java.util.List;
 
-/**
- * Created by vbokh on 06.07.2017.
- */
+
 public interface Component {
     void addComponent(Component component);
 
@@ -15,4 +13,6 @@ public interface Component {
     TextType getTextType();
 
     int size();
+
+    void setChildComponents(List<Component> components);
 }

@@ -18,7 +18,7 @@ public class LexemeParserTest {
     private static TextReader textReader;
     private static ParagraphParser paragraphParser;
     private final static String FILE_NAME = "data/data.txt";
-    private int expectedNumberOfLexemes = 20;
+    private int expectedNumberOfLexemes = 23;
     private static String dataFromFile;
 
     @BeforeClass
@@ -26,7 +26,6 @@ public class LexemeParserTest {
         textReader = new TextReader();
         paragraphParser = new ParagraphParser();
         dataFromFile = textReader.readDataFromFile(FILE_NAME);
-
     }
 
     @Test
@@ -34,7 +33,6 @@ public class LexemeParserTest {
         Component textComponents = paragraphParser.parse(dataFromFile);
         int actual = textComponents.getChild().get(0).getChild().get(0).getChild().size();
         assertEquals(expectedNumberOfLexemes, actual);
-
     }
 
     @Test(expected = WrongDataException.class)

@@ -2,9 +2,9 @@ package com.vbokhan.informationhandling.interpreter;
 
 
 public class NonTerminalExpression extends AbstractMathExpression{
-    private int number;
+    private double number;
 
-    public NonTerminalExpression(int number) {
+    public NonTerminalExpression(double number) {
         this.number = number;
     }
 

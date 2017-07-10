@@ -3,10 +3,8 @@ package com.vbokhan.informationhandling.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by vbokh on 30.06.2017.
- */
-public class TextComponent implements Component{
+
+public class TextComponent implements Component {
     private TextType textType;
     private List<Component> childComponents;
 
@@ -40,16 +38,27 @@ public class TextComponent implements Component{
         return childComponents.size();
     }
 
+    public void setChildComponents(List<Component> components) {
+        childComponents = components;
+    }
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (Component component : childComponents) {
             builder.append(component.toString());
             TextType type = component.getTextType();
-            if (type == TextType.LEXEME || type == TextType.SENTENCE) {
+            if (type == TextType.LEXEME) {
+                builder.append(" ");
+            }
+            if (type == TextType.PUNCTUATION) {
+                int index = builder.lastIndexOf(" ");
+                builder.replace(index, index + 1, "");
                 builder.append(" ");
             }
             if (type == TextType.PARAGRAPH) {
-                builder.append("\n");
+                int index = builder.lastIndexOf(" ");
+                builder.replace(index, index + 1, "\n");
+
             }
         }
         return builder.toString();

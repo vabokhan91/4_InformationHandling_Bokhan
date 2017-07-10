@@ -4,13 +4,18 @@ import java.util.ArrayDeque;
 
 
 public class Context {
-    private ArrayDeque<Integer> contextValues = new ArrayDeque<>();
+    private ArrayDeque<Double> contextValues = new ArrayDeque<>();
 
-    public Integer popValue() {
-        return contextValues.pop();
+
+    public Double popValue() {
+        double number = 0;
+        if (contextValues.peek() != null) {
+            number = contextValues.pop();
+        }
+        return number;
     }
 
-    public void pushValue(Integer value) {
+    public void pushValue(Double value) {
         contextValues.push(value);
     }
 }

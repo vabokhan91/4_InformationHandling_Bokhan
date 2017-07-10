@@ -5,14 +5,13 @@ import com.vbokhan.informationhandling.entity.TextComponent;
 import com.vbokhan.informationhandling.entity.TextType;
 import com.vbokhan.informationhandling.exception.WrongDataException;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 public class ParagraphParser extends AbstractParser {
     private final static String REGEX_FOR_PARAGRAPH = "(\r\n|^).*?(?=\r\n|$)";
+
 
     public ParagraphParser() {
         nextParser = new SentenceParser();
@@ -27,6 +26,8 @@ public class ParagraphParser extends AbstractParser {
 
         Pattern paragraphPattern = Pattern.compile(REGEX_FOR_PARAGRAPH);
         Matcher paragraphMatcher = paragraphPattern.matcher(text);
+
+
         while (paragraphMatcher.find()) {
             String paragraph = paragraphMatcher.group();
             textComponent.addComponent(nextParser.parse(paragraph));

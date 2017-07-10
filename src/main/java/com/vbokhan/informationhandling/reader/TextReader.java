@@ -5,16 +5,10 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class TextReader {
@@ -30,7 +24,6 @@ public class TextReader {
         } catch (IOException e) {
             LOGGER.log(Level.ERROR, String.format("Error with file %s ", e.toString()));
         }
-
         return dataFromFile;
     }
 }

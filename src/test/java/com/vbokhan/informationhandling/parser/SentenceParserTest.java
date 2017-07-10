@@ -34,7 +34,6 @@ public class SentenceParserTest {
     public void parseSentencesTest() throws WrongDataException {
         Component textComponents = paragraphParser.parse(dataFromFile);
         assertEquals(expectedNumberOfSentences, textComponents.getChild().get(0).getChild().size());
-
     }
 
     @Test(expected = WrongDataException.class)

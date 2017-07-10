@@ -3,11 +3,11 @@ package com.vbokhan.informationhandling.entity;
 import java.util.List;
 
 
-public class Lexeme implements Component {
-    private TextType textType = TextType.LEXEME;
+public class Punctuation implements Component{
+    private TextType textType = TextType.PUNCTUATION;
     private String content;
 
-    public Lexeme(String content) {
+    public Punctuation(String content) {
         this.content = content;
     }
 
@@ -18,7 +18,7 @@ public class Lexeme implements Component {
 
     @Override
     public int size() {
-        return content.length();
+        return 1;
     }
 
     @Override
@@ -38,10 +38,11 @@ public class Lexeme implements Component {
 
     @Override
     public List<Component> getChild() {
-        throw new UnsupportedOperationException("Can not get child component from the lexeme. Lexeme does not have children.");
+        throw new UnsupportedOperationException("Can not get child component from the lexeme");
     }
+
     @Override
     public void setChildComponents(List<Component> components) {
-        throw new UnsupportedOperationException("Can not set child components to the lexeme.");
+        throw new UnsupportedOperationException("Can not set child component for the punctuation");
     }
 }
