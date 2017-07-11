@@ -6,8 +6,6 @@ import java.util.List;
 public interface Component {
     void addComponent(Component component);
 
-    void removeComponent(Component component);
-
     List<Component> getChild();
 
     TextType getTextType();

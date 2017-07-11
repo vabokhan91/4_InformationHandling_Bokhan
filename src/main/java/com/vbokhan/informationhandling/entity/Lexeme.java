@@ -32,14 +32,10 @@ public class Lexeme implements Component {
     }
 
     @Override
-    public void removeComponent(Component component) {
-        throw new UnsupportedOperationException("Can not remove component from the lexeme");
-    }
-
-    @Override
     public List<Component> getChild() {
         throw new UnsupportedOperationException("Can not get child component from the lexeme. Lexeme does not have children.");
     }
+
     @Override
     public void setChildComponents(List<Component> components) {
         throw new UnsupportedOperationException("Can not set child components to the lexeme.");

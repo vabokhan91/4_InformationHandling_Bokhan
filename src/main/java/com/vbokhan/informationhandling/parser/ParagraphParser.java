@@ -12,21 +12,19 @@ import java.util.regex.Pattern;
 public class ParagraphParser extends AbstractParser {
     private final static String REGEX_FOR_PARAGRAPH = "(\r\n|^).*?(?=\r\n|$)";
 
-
     public ParagraphParser() {
         nextParser = new SentenceParser();
     }
 
     @Override
-    public Component parse(String text) throws WrongDataException{
+    public Component parse(String text) throws WrongDataException {
         if (text == null || text.isEmpty()) {
-            throw new WrongDataException("Wrong data");
+            throw new WrongDataException("Wrong data for parsing. Nothing to parse.");
         }
         TextComponent textComponent = new TextComponent(TextType.TEXT);
 
         Pattern paragraphPattern = Pattern.compile(REGEX_FOR_PARAGRAPH);
         Matcher paragraphMatcher = paragraphPattern.matcher(text);
-
 
         while (paragraphMatcher.find()) {
             String paragraph = paragraphMatcher.group();

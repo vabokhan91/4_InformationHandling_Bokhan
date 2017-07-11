@@ -6,7 +6,6 @@ import java.util.ArrayDeque;
 public class Context {
     private ArrayDeque<Double> contextValues = new ArrayDeque<>();
 
-
     public Double popValue() {
         double number = 0;
         if (contextValues.peek() != null) {

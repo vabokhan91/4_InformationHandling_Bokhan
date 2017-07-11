@@ -19,11 +19,6 @@ public class TextComponent implements Component {
     }
 
     @Override
-    public void removeComponent(Component component) {
-        childComponents.remove(component);
-    }
-
-    @Override
     public List<Component> getChild() {
         return childComponents;
     }
@@ -41,6 +36,7 @@ public class TextComponent implements Component {
     public void setChildComponents(List<Component> components) {
         childComponents = components;
     }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -58,7 +54,6 @@ public class TextComponent implements Component {
             if (type == TextType.PARAGRAPH) {
                 int index = builder.lastIndexOf(" ");
                 builder.replace(index, index + 1, "\n");
-
             }
         }
         return builder.toString();

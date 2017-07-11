@@ -1,7 +1,7 @@
 package com.vbokhan.informationhandling.interpreter;
 
 
-public class NonTerminalExpression extends AbstractMathExpression{
+public class NonTerminalExpression extends AbstractMathExpression {
     private double number;
 
     public NonTerminalExpression(double number) {

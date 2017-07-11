@@ -16,38 +16,46 @@ public class LexemeParser extends AbstractParser {
     @Override
     public TextComponent parse(String text) throws WrongDataException {
         if (text == null || text.isEmpty()) {
-            throw new WrongDataException("Wrong data");
+            throw new WrongDataException("Wrong data for parsing. Nothing to parse.");
         }
         TextComponent sentence = new TextComponent(TextType.SENTENCE);
-        Pattern pattern = Pattern.compile(REGEX_FOR_LEXEME);
+        Pattern patternForLexeme = Pattern.compile(REGEX_FOR_LEXEME);
         Pattern arithmeticPattern = Pattern.compile(REGEX_FOR_ARITHMETIC_EXPRESSION);
         Pattern patternForPunctuation = Pattern.compile(REGEX_FOR_PUNCTUATION);
-        Matcher matcher = pattern.matcher(text);
-        while (matcher.find()) {
-            String lex = matcher.group();
-            Matcher matcherForPunctuation = patternForPunctuation.matcher(lex);
-
-            Matcher arithmeticMatcher = arithmeticPattern.matcher(lex);
-            while (arithmeticMatcher.find()) {
-                String expression = arithmeticMatcher.group();
-                Client client = new Client(expression);
-                double result = (Double) client.calculate();
-                String s = String.valueOf(result);
-                lex = expression.replaceAll(REGEX_FOR_ARITHMETIC_EXPRESSION, s);
+        Matcher matcherForLexeme = patternForLexeme.matcher(text);
+        while (matcherForLexeme.find()) {
+            String parsingLexeme = matcherForLexeme.group();
+            Matcher matcherForPunctuation = patternForPunctuation.matcher(parsingLexeme);
+            Matcher arithmeticMatcher = arithmeticPattern.matcher(parsingLexeme);
+            if (arithmeticMatcher.find()) {
+                parsingLexeme = evaluateExpression(arithmeticMatcher);
             }
             if (matcherForPunctuation.find()) {
-                String exp = matcherForPunctuation.group();
-                Component punctuation = new Punctuation(exp);
-                String replacedLex = lex.replace(exp, "");
-                Component lexeme = new Lexeme(replacedLex);
-                sentence.addComponent(lexeme);
-                sentence.addComponent(punctuation);
-
+                parseForLexemeAndPunctuation(sentence, parsingLexeme, matcherForPunctuation);
             } else {
-                Component lexeme = new Lexeme(lex);
+                Component lexeme = new Lexeme(parsingLexeme);
                 sentence.addComponent(lexeme);
             }
         }
         return sentence;
+    }
+
+    private String evaluateExpression(Matcher arithmeticMatcher) throws WrongDataException {
+        String parsingLexeme;
+        String expression = arithmeticMatcher.group();
+        Client client = new Client(expression);
+        double result = (Double) client.calculate();
+        String s = String.valueOf(result);
+        parsingLexeme = expression.replaceAll(REGEX_FOR_ARITHMETIC_EXPRESSION, s);
+        return parsingLexeme;
+    }
+
+    private void parseForLexemeAndPunctuation(TextComponent sentence, String parsingLexeme, Matcher matcherForPunctuation) {
+        String punctuation = matcherForPunctuation.group();
+        Component punctuationComponent = new Punctuation(punctuation);
+        String replacedLex = parsingLexeme.replace(punctuation, "");
+        Component lexeme = new Lexeme(replacedLex);
+        sentence.addComponent(lexeme);
+        sentence.addComponent(punctuationComponent);
     }
 }

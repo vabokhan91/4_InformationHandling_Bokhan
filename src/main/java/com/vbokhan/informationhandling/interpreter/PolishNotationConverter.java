@@ -3,9 +3,7 @@ package com.vbokhan.informationhandling.interpreter;
 import java.util.ArrayDeque;
 import java.util.HashMap;
 
-/**
- * Created by vbokh on 07.07.2017.
- */
+
 public class PolishNotationConverter {
     private static final char WHITESPACE = ' ';
 
@@ -36,16 +34,16 @@ public class PolishNotationConverter {
 
         ArrayDeque<Character> operationStack = new ArrayDeque<>();
         StringBuilder postfixExpression = new StringBuilder();
-        int p = expression.length();
+        int expressionLength = expression.length();
 
-        for (int i = 0; i < expression.length(); i++) {
+        for (int i = 0; i < expressionLength; i++) {
             char token = expression.charAt(i);
             if (Character.isDigit(token)) {
                 postfixExpression.append(token);
-                if (i == expression.length()-1) {
+                if (i == expressionLength - 1) {
                     postfixExpression.append(WHITESPACE);
                     break;
-                }else if(!Character.isDigit(expression.charAt(i + NEXT_CHAR))){
+                } else if (!Character.isDigit(expression.charAt(i + NEXT_CHAR))) {
                     postfixExpression.append(WHITESPACE);
                 }
             } else {

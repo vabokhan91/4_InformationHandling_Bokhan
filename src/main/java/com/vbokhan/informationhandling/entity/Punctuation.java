@@ -3,7 +3,7 @@ package com.vbokhan.informationhandling.entity;
 import java.util.List;
 
 
-public class Punctuation implements Component{
+public class Punctuation implements Component {
     private TextType textType = TextType.PUNCTUATION;
     private String content;
 
@@ -29,11 +29,6 @@ public class Punctuation implements Component{
     @Override
     public void addComponent(Component component) {
         throw new UnsupportedOperationException("Can not add component to the lexeme");
-    }
-
-    @Override
-    public void removeComponent(Component component) {
-        throw new UnsupportedOperationException("Can not remove component from the lexeme");
     }
 
     @Override

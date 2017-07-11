@@ -5,13 +5,11 @@ import com.vbokhan.informationhandling.entity.TextComponent;
 import com.vbokhan.informationhandling.entity.TextType;
 import com.vbokhan.informationhandling.exception.WrongDataException;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class SentenceParser extends AbstractParser{
+public class SentenceParser extends AbstractParser {
     private final static String REGEX_FOR_SENTENCE = "(\\S.+?[.!?])(?=\\s+|$)";
 
     public SentenceParser() {

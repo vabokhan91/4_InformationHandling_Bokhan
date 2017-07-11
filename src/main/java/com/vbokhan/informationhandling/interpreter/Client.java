@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public class Client {
     private static final Logger LOGGER = LogManager.getLogger();
     private static final String DELIMITER_FOR_EXPRESSION = "\\p{Blank}";
-    private static final String REGEX_FOR_INTEGER = "^-?\\d+$";
+    private static final String REGEX_FOR_NUMBER = "^-?\\d+$";
     private ArrayList<AbstractMathExpression> listExpression;
     private static double i;
     private static double j;
@@ -62,7 +62,7 @@ public class Client {
                         listExpression.add(new NonTerminalExpression(j));
                         break;
                     default:
-                        Pattern pattern = Pattern.compile(REGEX_FOR_INTEGER);
+                        Pattern pattern = Pattern.compile(REGEX_FOR_NUMBER);
                         Matcher numberInteger = pattern.matcher(lexeme);
                         if (numberInteger.matches()) {
                             int number = Integer.parseInt(lexeme);
@@ -79,7 +79,6 @@ public class Client {
         Context context = new Context();
         for (AbstractMathExpression terminal : listExpression) {
             terminal.interpret(context);
-
         }
         return context.popValue();
     }
@@ -99,6 +98,4 @@ public class Client {
     public static void setJ(double j) {
         Client.j = j;
     }
-
-
 }
